@@ -10,6 +10,7 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:8.7.2'
+        classpath "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     }
 }
 
@@ -25,6 +26,10 @@ apply plugin: 'com.android.library'
 android {
     namespace "com.whelksoft.flutter_native_timezone"
     compileSdkVersion 34
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 
     defaultConfig {
         targetSdkVersion 34
